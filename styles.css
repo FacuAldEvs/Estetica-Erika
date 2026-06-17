@@ -5,7 +5,11 @@
 }
 
 body {
-    background-color: rgb(192, 221, 235);
+    background: url(./IMAGES/background_stock1.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .logo {
@@ -30,6 +34,28 @@ header {
 .nav-links {
     display: flex;
     gap: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 15px;
+        margin: 10px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
 }
 
 a {
@@ -65,15 +91,17 @@ button:hover .turno {
 /*ACÁ TERMINA EL HEADER NAV*/
 
 section {
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 20px;
 }
 
-h1, h3, strong {
+h3 {
     font-family: "La Belle Aurore", cursive;
     font-weight: 400;
     font-style: normal;
     text-align: center;
+    color: rgb(120, 13, 93);;
+    font-size: 1.6rem;
 }
 
 .sect_title {
@@ -89,35 +117,74 @@ h1, h3, strong {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 100;
     text-align: center;
-    margin-top: -10px;
+    margin-top: -30px;
+    padding: 30px;
+    color: whitesmoke;
 }
 
 /*ACÁ EMPIEZA LA SECCIÓN DE INTRODUCCIÓN*/
 
 .introduccion {
-    background-color: rgb(255, 255, 255);
-    border-radius: 1px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.595);
+    border-radius: 16px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    margin: 20px 50px 0 50px;
+    animation: entradasuave 1.2s ease-out forwards;
 }
 
+@keyframes entradasuave {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 768px) {
+    .introduccion {
+        margin: 20px 15px 0 15px; 
+        padding: 20px; 
+    }
+} 
+
 .local {
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
 .img_local {
-    width: 85%;
+    max-width: 720px;
+    width: 90%;
     margin: auto;
-    border-radius: 30px;
+    border-radius: 24px;
+    opacity: 0.9;
 }
 
 /*ACÁ EMPIEZA LA SECCIÓN DE SERVICIOS*/
 
 .cuerpo {
-    background-color: blue;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.653);
+    border-radius: 16px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    margin: 20px 40px 0 40px;
+    padding: 120px;
 }
+
+@media (max-width: 768px) {
+    .cuerpo {
+        margin: 20px 15px 0 15px; 
+        padding: 20px; 
+    }
+} 
 
 .servicios { 
     display: flex;
@@ -127,6 +194,41 @@ h1, h3, strong {
 .item1 {
     display: flex;
     flex-direction: row;
+    gap: 4rem;
+    margin-bottom: 20px;
+}
+
+.item2 {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4rem;
+    margin-bottom: 20px;
+}
+
+.card1 {
+    max-width: 350px;
+    width: 90%;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.card2 {
+    max-width: 350px;
+    width: 90%;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.text1 {
+    text-align: right;
+}
+
+.text2 {
+    text-align: left;
+}
+
+.servi_desc {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    hyphens: auto;
 }
 
 /*ACÁ TERMINA*/
@@ -134,6 +236,27 @@ h1, h3, strong {
 .tone-list {
     list-style: none;
 }
+
+/*ACÁ EMPIEZA LA SECCIÓN DE RESEÑAS*/
+
+.rev_title {
+    font-family: "La Belle Aurore", cursive;
+    font-weight: 400;
+    text-align: center;
+    font-size: 35px;
+    color:rgb(241, 140, 216);
+    padding-bottom: 30px;
+}
+
+.reseñas1 {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.653);
+    border-radius: 16px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    padding: 40px 20px 0px 20px;
+}
+
 
 /*ZONA DE FOOTER*/
 
@@ -181,6 +304,13 @@ footer {
 .logo-foot {
     width: 120px;
     filter: grayscale(10) drop-shadow(1px 2px 0 white);
+}
+
+.foot_p {
+    font-family: "La Belle Aurore", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
 }
 
 .copyright {
