@@ -99,7 +99,6 @@ h3 {
     font-family: "La Belle Aurore", cursive;
     font-weight: 400;
     font-style: normal;
-    text-align: center;
     color: rgb(120, 13, 93);;
     font-size: 1.6rem;
 }
@@ -194,34 +193,40 @@ h3 {
 .item1 {
     display: flex;
     flex-direction: row;
-    gap: 4rem;
-    margin-bottom: 20px;
+    gap: 30px;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
 .item2 {
     display: flex;
     flex-direction: row-reverse;
-    gap: 4rem;
-    margin-bottom: 20px;
+    gap: 30px;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
 .card1 {
-    max-width: 350px;
-    width: 90%;
+    max-width: 380px;
+    width: 45%;
     border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
 }
 
 .card2 {
-    max-width: 350px;
-    width: 90%;
+    max-width: 380px;
+    width: 45%;
     border-radius: 0px 20px 20px 0px;
+    object-fit: cover;
 }
 
 .text1 {
     text-align: right;
+    width: 55%;
 }
 
 .text2 {
+    width: 55%;
     text-align: left;
 }
 
@@ -229,6 +234,26 @@ h3 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
     hyphens: auto;
+}
+
+@media (max-width: 680px) {
+    .item1, .item2 {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .card1, .card2 {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .text {
+        width: 100%;
+        padding: 10px;
+    }
 }
 
 /*ACÁ TERMINA*/
