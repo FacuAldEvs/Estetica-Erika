@@ -183,7 +183,11 @@ h3 {
     opacity: 0.9;
 }
 
-/*ACÁ EMPIEZA LA SECCIÓN DE SERVICIOS*/
+/*ESTILOS GENERALES Y CRISTAL*/
+.servicios { 
+    display: flex;
+    flex-direction: column;
+}
 
 .cuerpo {
     backdrop-filter: blur(16px) saturate(180%);
@@ -192,88 +196,190 @@ h3 {
     border-radius: 16px;
     border: 1px solid rgba(209, 213, 219, 0.3);
     margin: 20px 40px 0 40px;
-    padding: 120px;
+    padding: 60px 40px;
 }
 
-@media (max-width: 768px) {
+.divisor-servicios {
+    border: 0;
+    height: 1px;
+    background: rgba(246, 81, 205, 0.63);
+    margin: 60px 0;
+}
+
+.otros {
+    font-family: "La Belle Aurore", cursive;
+    font-size: 36px;
+    color: rgb(120, 13, 93);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/*MAQUETACIÓN PARA MONITORES (PC / TABLET)*/
+@media (min-width: 769px) {
+
     .cuerpo {
-        margin: 20px 15px 0 15px; 
-        padding: 20px; 
+    max-width: 100%;
+    overflow: hidden;
     }
-} 
 
-.servicios { 
-    display: flex;
-    flex-direction: column;
+    .grilla-mas-servicios {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(250px, 1fr);
+    gap: 25px;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 50px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(138, 138, 138, 0.49) rgba(0, 0, 0, 0);
 }
 
-.item1 {
+    .item1 { 
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 40px;
     margin-bottom: 40px;
     width: 100%;
+    align-items: center; 
 }
 
-.item2 {
-    display: flex;
+    .item2 { 
+    display: flex; 
     flex-direction: row-reverse;
-    gap: 30px;
+    gap: 40px;
     margin-bottom: 40px;
     width: 100%;
+    align-items: center; 
 }
 
-.card1 {
+    .card1 { 
     max-width: 380px;
     width: 45%;
-    border-radius: 20px 0px 0px 20px;
-    object-fit: cover;
+    border-radius: 20px 0 0 20px;
+    object-fit: cover; 
 }
 
-.card2 {
+    .card2 { 
     max-width: 380px;
     width: 45%;
-    border-radius: 0px 20px 20px 0px;
-    object-fit: cover;
+    border-radius: 0 20px 20px 0; 
+    object-fit: cover; 
 }
 
-.text1 {
-    text-align: right;
+    .text1 { 
     width: 55%;
+    text-align: right; 
 }
 
-.text2 {
-    width: 55%;
+    .text1 h3 {
+    text-align: right; 
+}
+
+.text2 { 
+    width: 55%; 
     text-align: left;
 }
 
-.servi_desc {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: justify;
-    hyphens: auto;
+.text2 h3 {
+    text-align: left; 
 }
 
-@media (max-width: 680px) {
+.servi_desc { 
+    font-family: Verdana, sans-serif; text-align: justify; 
+}
+
+}
+
+/*TARJETAS DE OTROS SERVICIOS*/
+
+.tarjeta-chica {
+    background: rgba(255, 255, 255, 0.351);
+    border: 1px solid rgba(255, 255, 255, 0.225);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.214);
+    scroll-snap-align: start;
+}
+
+.tarjeta-chica img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.tarjeta-chica h4 {
+    font-size: 17px;
+    color: rgba(248, 71, 204, 0.858);
+    margin-bottom: 8px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.tarjeta-chica p {
+    font-family: Verdana, sans-serif;
+    font-size: 13px;
+    color: #3e3e3e;
+    line-height: 1.4;
+}
+
+/*TARJETAS DE OTROS SERVICIOS*/
+
+/*MAQUETACIÓN PARA CELULARES*/
+@media (max-width: 768px) {
+    .cuerpo {
+    margin: 20px 15px 0 15px; 
+    padding: 30px 15px; 
+}
+
     .item1, .item2 {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
+    display: flex;
+    flex-direction: column !important;
+    gap: 15px;
+    margin-bottom: 35px;
+}
 
     .card1, .card2 {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        border-radius: 20px;
-    }
-
-    .text {
-        width: 100%;
-        padding: 10px;
-    }
+    width: 100% !important;
+    max-width: 100%;
+    border-radius: 12px !important;
 }
 
-/*ACÁ TERMINA*/
+    .text1, .text2 {
+    width: 100% !important;
+    text-align: center !important;
+    
+}
+
+    .text1 h3, .text2 h3 {
+    text-align: center !important; 
+}
+
+    .grilla-mas-servicios {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding: 10px 5px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(138, 138, 138, 0.49) rgba(0, 0, 0, 0);
+}
+
+    .grilla-mas-servicios::-webkit-scrollbar {
+    display: none;
+}
+
+    .tarjeta-chica {
+    flex: 0 0 240px;
+    scroll-snap-align: center;
+}
+}
+
+/*ACÁ TERMINA LA SECCIÓN DE SERVICIOS*/
 
 .tone-list {
     list-style: none;
