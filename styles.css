@@ -300,6 +300,8 @@ h3 {
     padding: 15px;
     text-align: center;
     scroll-snap-align: start;
+    content-visibility: auto;
+    contain-intrinsic-size: 240px 300px;
 }
 
 .tarjeta-chica img {
@@ -344,6 +346,7 @@ h3 {
     .card1, .card2 {
     width: 100% !important;
     max-width: 100%;
+    height: auto;
     border-radius: 12px !important;
 }
 
