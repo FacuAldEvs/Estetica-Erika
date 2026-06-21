@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: url(./IMAGES/background_stock1.jpg);
     background-position: center;
@@ -222,12 +226,14 @@ h3 {
     margin: 60px 0;
 }
 
+
+/*TÍTULO DE CATEGORÍAS*/
 .otros {
     font-family: "La Belle Aurore", cursive;
     font-size: 36px;
     color: rgb(120, 13, 93);
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /*MAQUETACIÓN PARA MONITORES (PC / TABLET)*/
